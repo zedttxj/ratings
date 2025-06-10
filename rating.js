@@ -24,7 +24,7 @@ let publicKey;
   const privateKey = issued.privateKey;
   const caPublicKey = issued.caPublicKey;
   const roomId = issued.roomId;
-  const result = await runAuthenticatedClient("ws://localhost:8888/hub", certificate, privateKey, caPublicKey, roomId);
+  const result = await runAuthenticatedClient("ws://relay-h2hg.onrender.com/hub", certificate, privateKey, caPublicKey, roomId);
   publicKey = result.clientPubKey;
   console.log(certificate);
   console.log(publicKey);
