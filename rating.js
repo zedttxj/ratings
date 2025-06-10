@@ -15,7 +15,7 @@ const mongoClient = new MongoClient(mongoUri);
 let ratingsCollection;
 
 // const publicKey = fs.readFileSync(path.join(__dirname, './inter-service-public.pem'), 'utf-8');
-const { runAuthenticatedClient, requestCertificateFromHub } = require('../roomtest/clientCertRequester'); // Adjust this path first
+const { runAuthenticatedClient, requestCertificateFromHub } = require('./clientCertRequester'); // Adjust this path first
 let publicKey;
 
 (async () => {
