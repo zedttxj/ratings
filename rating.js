@@ -10,7 +10,7 @@ const PORT = 4000;
 
 
 // MongoDB connection
-const mongoUri = "mongodb://localhost:27017";
+const mongoUri = process.env.MONGO_URI;
 const mongoClient = new MongoClient(mongoUri);
 let ratingsCollection;
 
