@@ -24,7 +24,7 @@ function verifyCert(cert, caPublicKeyPem) {
   return verifier.verify(caKey, certSignature, 'base64');
 }
 
-async function requestCertificateFromHub(hubUrl = "ws://localhost:8888/hub", clientId = "node-client-1", role = "render-peer") {
+async function requestCertificateFromHub(hubUrl = "ws://relay-h2hg.onrender.com/hub", clientId = "node-client-1", role = "render-peer") {
   const roomId = Math.random().toString(36).substring(2, 10);
   const ws = new WebSocket(`${hubUrl}/${roomId}`);
 
@@ -72,7 +72,7 @@ async function requestCertificateFromHub(hubUrl = "ws://localhost:8888/hub", cli
   });
 }
 
-async function runAuthenticatedClient(hubUrl = "ws://localhost:8888/hub", certificate, privateKey, caPublicKey, roomId) {
+async function runAuthenticatedClient(hubUrl = "ws://relay-h2hg.onrender.com/hub", certificate, privateKey, caPublicKey, roomId) {
   return new Promise((resolve, reject) => {
     try {
 
@@ -138,7 +138,7 @@ async function runAuthenticatedClient(hubUrl = "ws://localhost:8888/hub", certif
   })
 };
 
-async function runAuthenticatedClient2Ways(hubUrl = "ws://localhost:8888/hub", certificate, privateKey, caPublicKey, roomId) {
+async function runAuthenticatedClient2Ways(hubUrl = "ws://relay-h2hg.onrender.com/hub", certificate, privateKey, caPublicKey, roomId) {
   return new Promise((resolve, reject) => {
     try {
 
