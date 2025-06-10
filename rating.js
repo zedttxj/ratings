@@ -38,8 +38,8 @@ async function connectToMongo() {
   console.log("📦 Connected to MongoDB");
 
   // ✅ Only start listening after DB is ready
-  app.listen(PORT, () => {
-    console.log(`🎯 Rating service running at http://localhost:${PORT}`);
+  app.listen(PORT, "0.0.0.0", () => {
+    console.log(`🎯 Rating service running at :${PORT}`);
   });
 }
 
