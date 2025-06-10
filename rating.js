@@ -26,8 +26,6 @@ let publicKey;
   const roomId = issued.roomId;
   const result = await runAuthenticatedClient("wss://relay-h2hg.onrender.com/hub", certificate, privateKey, caPublicKey, roomId);
   publicKey = result.clientPubKey;
-  console.log(certificate);
-  console.log(publicKey);
 })();
 
 async function connectToMongo() {
