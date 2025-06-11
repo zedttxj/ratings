@@ -160,6 +160,9 @@ async function updateStats(rater, target, roomId, emoji) {
 
 app.post("/api/summary", async (req, res) => {
   const { clientIds } = req.body;
+  if (!ratingsCollection) {
+    return res.status(503).json({ error: "DB not ready" });
+  }
   const statsCol = mongoClient.db("ratingsDB").collection("ratingStats");
   const docs = await statsCol.find({ clientId: { $in: clientIds } }).toArray();
 
